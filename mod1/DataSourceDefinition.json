@@ -1,0 +1,19 @@
+{
+    "@odata.context": "https://kmta4hsearch.search.windows.net/$metadata#datasources/$entity",
+    "@odata.etag": "\"0x8D9EA8AE9C41B0A\"",
+    "name": "clinical-trials-small",
+    "description": null,
+    "type": "azureblob",
+    "subtype": null,
+    "credentials": {
+      "connectionString": "DefaultEndpointsProtocol=https;AccountName=kmta4hsa;AccountKey=..."
+    },
+    "container": {
+      "name": "clinical-trials-small",
+      "query": null
+    },
+    "dataChangeDetectionPolicy": null,
+    "dataDeletionDetectionPolicy": null,
+    "encryptionKey": null,
+    "identity": null
+  }
