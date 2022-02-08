@@ -13,3 +13,4 @@ PUT https://kmta4hsearch.search.windows.net/indexers/clinical-trials-small?api-v
 Try the following request and make sure the 'diseases' field is populated with data
 GET https://kmta4hsearch.search.windows.net/indexes/clinical-trials-small/docs?api-version=2021-04-30-Preview&search=MPS&%24select=metadata_title%2Cdiseases
 
+GET https://kmta4hsearch.search.windows.net/indexes/clinical-trials-small/docs?api-version=2021-04-30-Preview&search=*&%24filter=diseases%2Fany(disease%3A%20disease%20eq%20'morquio')%20and%20diseases%2Fall(disease%3A%20disease%20ne%20'chest%20pain')&%24select=metadata_title%2Cdiseases

@@ -1,0 +1,28 @@
+To the 'diseasesPhonetic' field,  custom analyzer, and tokenfilter to the index
+PUT https://kmta4hsearch.search.windows.net/indexes/clinical-trials-small?api-version=2021-04-30-Preview&allowIndexDowntime=true
+
+To add the 'diseasesPhonetic' to the output field mapping of the indexers
+PUT https://kmta4hsearch.search.windows.net/indexers/clinical-trials-small?api-version=2021-04-30-Preview
+
+To test analyzer 1 with the following body
+{
+  "text": "mukopolisakaridosis",
+  "analyzer": "my_phonetic"
+}
+POST    https://kmta4hsearch.search.windows.net/indexes/clinical-trials-small/analyze?api-version=2021-04-30-Preview
+
+To test again with another body
+{
+  "text": "mucopolysaccharidosis",
+  "analyzer": "my_phonetic"
+}
+POST    https://kmta4hsearch.search.windows.net/indexes/clinical-trials-small/analyze?api-version=2021-04-30-Preview
+
+make sure that the resulting json has a "token": "MKPL"
+
+To test the new scoring profile
+with scoring profile 
+GET https://kmta4hsearch.search.windows.net/indexes/clinical-trials-small/docs?api-version=2021-04-30-Preview&search&scoringProfile=recentlyUpdatedBoost
+
+without scoring profile 
+GET https://kmta4hsearch.search.windows.net/indexes/clinical-trials-small/docs?api-version=2021-04-30-Preview&search
