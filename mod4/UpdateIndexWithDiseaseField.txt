@@ -1,0 +1,15 @@
+To update the index with the new 'diseases' field
+PUT https://kmta4hsearch.search.windows.net/indexes/clinical-trials-small?api-version=2021-04-30-Preview
+
+To inspect the index schema and make sure it has the 'diseases' field
+GET https://kmta4hsearch.search.windows.net/indexes/clinical-trials-small?api-version=2021-04-30-Preview
+
+To add 'diseases' extracted from fn, a new record to shaper skill AND a new output tableprojection to skillset
+PUT https://kmta4hsearch.search.windows.net/skillsets/clinical-trials-small?api-version=2021-04-30-Preview
+
+To update the output field mapping in indexer
+PUT https://kmta4hsearch.search.windows.net/indexers/clinical-trials-small?api-version=2021-04-30-Preview
+
+Try the following request and make sure the 'diseases' field is populated with data
+GET https://kmta4hsearch.search.windows.net/indexes/clinical-trials-small/docs?api-version=2021-04-30-Preview&search=MPS&%24select=metadata_title%2Cdiseases
+
