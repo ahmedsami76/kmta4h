@@ -1,0 +1,1 @@
+Added locations field in skillsets in order to populate the knowledge store tables with the locations field to be able to use it in Power Bi.
